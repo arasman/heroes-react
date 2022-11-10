@@ -7,7 +7,10 @@ export const LoginPage = () => {
   const navigate = useNavigate();  
   const onLogin = () => {
     login('ARAS');
-    navigate('/', {
+
+    const lastPath = localStorage.getItem('lastPath') || '/';
+
+    navigate(lastPath, {
       replace: true
     })
   }
